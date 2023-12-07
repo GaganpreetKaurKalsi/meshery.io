@@ -68,8 +68,6 @@ permalink: /catalog
       status="{{ pattern.Status }}"
     >
       {% include card.html %}
-      <!-- modal included -->
-      {% include modal.html %}
     </div>
     {% endif %} {% endfor %} {% for pattern in site.data.wasm %} {% if
     pattern.filterInfo and pattern.Status != "ComingSoon" %}
@@ -80,8 +78,6 @@ permalink: /catalog
       technology="{{ pattern.technology }}"
     >
       {% include wasm-card.html %}
-      <!-- modal included -->
-      {% include modal.html %} {% include card-modal.html %}
     </div>
     {% endif %} {% endfor %} {% for pattern in catalog %} {% if
     pattern.patternInfo and pattern.Status == "ComingSoon" %}
