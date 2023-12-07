@@ -57,7 +57,8 @@ permalink: /catalog
   </div>
 
   <div class="row">
-    {% for pattern in catalog %} {% if pattern.patternInfo and pattern.Status !=
+    {% assign visiblePatterns = catalog | slice: 0, 15 %} {% for pattern in
+    visiblePatterns %} {% if pattern.patternInfo and pattern.Status !=
     "ComingSoon" %}
     <div
       class="column column-lg patternCard"
