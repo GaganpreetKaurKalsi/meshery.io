@@ -57,7 +57,7 @@ permalink: /catalog
   </div>
 
   <div class="row">
-    {% assign visiblePatterns = catalog | slice: 0, 5 %} {% for pattern in
+    {% assign visiblePatterns = catalog | slice: 0, 15 %} {% for pattern in
     visiblePatterns %} {% if pattern.patternInfo and pattern.Status !=
     "ComingSoon" %}
     <div
@@ -67,7 +67,7 @@ permalink: /catalog
       technology="{{ pattern.technology }}"
       status="{{ pattern.Status }}"
     >
-      {% include card.html %}
+      {% include card.html %} {% include modal.html %}
     </div>
     {% endif %} {% endfor %} {% for pattern in site.data.wasm %} {% if
     pattern.filterInfo and pattern.Status != "ComingSoon" %}
@@ -77,7 +77,7 @@ permalink: /catalog
       type="{{ pattern.filters.type }}"
       technology="{{ pattern.technology }}"
     >
-      {% include wasm-card.html %}
+      {% include wasm-card.html %} {% include modal.html %}
     </div>
     {% endif %} {% endfor %} {% for pattern in catalog %} {% if
     pattern.patternInfo and pattern.Status == "ComingSoon" %}
