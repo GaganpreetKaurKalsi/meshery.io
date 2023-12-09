@@ -47,28 +47,27 @@ permalink: /catalog
 
 {% assign catalog = site.catalog | sort: 'name' %}
 <div class="section-container">
-  <div class="sorting-options">
+  <!-- <div class="sorting-options">
     <select id="sort">
       <option disabled selected value>Sort by</option>
       <option value="asc">Alphabetically (A-Z)</option>
       <option value="desc">Alphabetically (Z-A)</option>
     </select>
     <input type="text" id="search" placeholder="Search..." />
-  </div>
+  </div> -->
 
   <div class="row">
-    {% for pattern in catalog %} {% if pattern.patternInfo and pattern.Status !=
-    "ComingSoon" %}
+    {% assign visiblePatterns = catalog%} {% for pattern in visiblePatterns %}
+    {% if pattern.patternInfo and pattern.Status != "ComingSoon" %}
     <div
       class="column column-lg patternCard"
       filter="{{ pattern.name }}"
       type="{{ pattern.type }}"
       technology="{{ pattern.technology }}"
       status="{{ pattern.Status }}"
+      style="display: none"
     >
-      {% include card.html %}
-      <!-- modal included -->
-      {% include modal.html %}
+      {% include card.html %} {% include modal.html %}
     </div>
     {% endif %} {% endfor %} {% for pattern in site.data.wasm %} {% if
     pattern.filterInfo and pattern.Status != "ComingSoon" %}
@@ -77,10 +76,9 @@ permalink: /catalog
       filter="{{ pattern.name }}"
       type="{{ pattern.filters.type }}"
       technology="{{ pattern.technology }}"
+      style="display: none"
     >
-      {% include wasm-card.html %}
-      <!-- modal included -->
-      {% include modal.html %} {% include card-modal.html %}
+      {% include wasm-card.html %} {% include modal.html %}
     </div>
     {% endif %} {% endfor %} {% for pattern in catalog %} {% if
     pattern.patternInfo and pattern.Status == "ComingSoon" %}
@@ -90,6 +88,7 @@ permalink: /catalog
       type="{{ pattern.type }}"
       technology="{{ pattern.technology }}"
       status="{{ pattern.Status }}"
+      style="display: none"
     >
       {% include coming-soon.html %}
     </div>
@@ -97,7 +96,7 @@ permalink: /catalog
   </div>
 </div>
 
-<script>
+<!-- <script>
   document.getElementById("sort").addEventListener("change", function () {
     var sortValue = this.value;
     var cardsContainer = document.querySelector(".row");
@@ -150,4 +149,4 @@ permalink: /catalog
       }
     });
   });
-</script>
+</script> -->

@@ -148,7 +148,7 @@
       <label class="disabled-label"><input type="radio" value="JWT" onchange='window.location.assign("/catalog/nats")' disabled/> NATS </label>
   </div> -->
 </div>
-<script>
+<!-- <script>
   
   var drop_button = document.getElementById("arrow-icon")
   var open = true
@@ -173,7 +173,7 @@
 
   categotyLink.addEventListener("click", showCategory);
   compatibilityLink.addEventListener("click", showCompatibility);
-  technologyLink.addEventListener("click", showTechnology);
+  // technologyLink.addEventListener("click", showTechnology);
 
   function showCategory() {
     category_div.style.display = "flex";
@@ -211,9 +211,9 @@
     open = !open
     return;
   }
-</script>
+</script> -->
 
-<script type="module">
+<!-- <script type="module">
 
   // import all integrations data
   import data from "{{ site.baseurl }}/integrations/data.js";
@@ -326,8 +326,8 @@
     const label = document.createElement("label");
     let colorImg = data[i].color?.split("/integration")?.join("");
     let whiteImg = data[i].white?.split("/integration")?.join("");
-
-    label.innerHTML = `<img src="${colorImg}" id="logo-dark-light" data-logo-for-dark="${whiteImg ?? colorImg}"
+    console.log()
+    label.innerHTML = `<img src="${body.classList.contains("dark-mode") ? whiteImg : colorImg}" id="logo-dark-light" data-logo-for-dark="${whiteImg ?? colorImg}"
                     data-logo-for-light="${colorImg}" /><div class="name">${data[i].name}</div><div class="badge">${count}</div>`;
     label.style.height = "20px";
     label.setAttribute("for", data[i].name);
@@ -410,4 +410,4 @@
       }
     }
   }
-</script>
+</script> -->

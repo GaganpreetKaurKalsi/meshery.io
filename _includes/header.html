@@ -54,7 +54,7 @@
 
   
     <body style="overflow-x: hidden" class="dark-mode">
-      <script>
+      <!-- <script>
         const body = document.body;
     
         if (localStorage.getItem("mode") === "light-mode") {
@@ -64,14 +64,14 @@
           allLogos.forEach(e => e.src = e.dataset.logoForLight);
         }
     
-        // Automatically set logos based on initial theme
-        window.addEventListener('load', () => {
-          let allLogos = document.querySelectorAll("#logo-dark-light");
-          allLogos.forEach(e => {
-            e.src = body.classList.contains("dark-mode") ? e.dataset.logoForDark : e.dataset.logoForLight;
-          });
-        });
-      </script>
+        // // Automatically set logos based on initial theme
+        // window.addEventListener('load', () => {
+        //   let allLogos = document.querySelectorAll("#logo-dark-light");
+        //   allLogos.forEach(e => {
+        //     e.src = body.classList.contains("dark-mode") ? e.dataset.logoForDark : e.dataset.logoForLight;
+        //   });
+        // });
+      </script> -->
 
     {% if page.title != "Meshery | The Kubernetes and Cloud Native Manager" and page.title != "Programs" %}
 <!-- Google Tag Manager (noscript) -->
