@@ -47,14 +47,14 @@ permalink: /catalog
 
 {% assign catalog = site.catalog | sort: 'name' %}
 <div class="section-container">
-  <div class="sorting-options">
+  <!-- <div class="sorting-options">
     <select id="sort">
       <option disabled selected value>Sort by</option>
       <option value="asc">Alphabetically (A-Z)</option>
       <option value="desc">Alphabetically (Z-A)</option>
     </select>
     <input type="text" id="search" placeholder="Search..." />
-  </div>
+  </div> -->
 
   <div class="row">
     {% assign visiblePatterns = catalog%} {% for pattern in visiblePatterns %}
